@@ -1,0 +1,19 @@
+# 忽略虚拟环境目录内的文件（readme.md除外）
+.venv/**
+!.venv/readme.md
+
+# 忽略env文件
+.env
+
+# 忽略db.sqlite3文件
+db.sqlite3
+
+# 忽略日志log目录内的文件（readme.md除外）
+log/**
+!log/readme.md
+
+# 忽略 __pycache__ 目录及相关文件
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
