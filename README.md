@@ -1,3 +1,33 @@
+## 📁 Django 项目结构说明
+
+一个标准的 Django 项目在创建后会包含以下核心文件和目录。
+
+---
+
+### 核心文件和目录说明
+
+| 文件/目录 | 描述 | 官方文档链接 |
+| :--- | :--- |:-----------------------------------------------------------------------------------------|
+| **`manage.py`** | 一个**命令行工具**，用于管理 Django 项目的各种任务，例如运行服务器、创建应用、进行数据库迁移等。 | [Django-admin 和 manage.py](https://docs.djangoproject.com/zh-hans/5.2/ref/django-admin/) |
+| **`mysite/`** | 实际的**项目包**（Project Package）。这是用于导入其中任何内容的 Python 包的名称（例如 `mysite.urls`）。这个目录下的文件定义了项目的配置和路由。 | - |
+| **`mysite/__init__.py`** | 一个空文件（或包含初始化代码的文件），用于告诉 Python 解释器：该目录应被视为一个 **Python 包**。 | [Python 教程：包](https://docs.python.org/3/tutorial/modules.html#tut-packages) |
+| **`mysite/settings.py`** | **Django 项目的配置文件**。它包含了所有项目级别的配置，如数据库连接、安装的应用、中间件、静态文件路径等。 | [Django Settings](https://docs.djangoproject.com/zh-hans/5.2/topics/settings/) |
+| **`mysite/urls.py`** | **Django 项目的 URL 声明**（URL Dispatcher）。它负责将传入的 HTTP 请求路由到对应的视图（View）上。 | [URL调度器](https://docs.djangoproject.com/zh-hans/5.2/topics/http/urls/) |
+| **`mysite/asgi.py`** | 项目运行在 **ASGI 兼容的 Web 服务器**上的入口。ASGI（Asynchronous Server Gateway Interface）用于支持异步请求，常用于 WebSockets 等场景。 | - |
+| **`mysite/wsgi.py`** | 项目运行在 **WSGI 兼容的 Web 服务器**上的入口。WSGI（Web Server Gateway Interface）是 Python Web 应用和 Web 服务器之间的一个通用接口标准。 | - |
+
+---
+
+### 💡 关键点提示
+
+* `manage.py` 位于项目根目录下，而其他配置文件则位于以项目名称命名的内部配置目录（例如 `mysite/`）中。
+* `mysite/` 目录的名称通常与您创建项目时指定的名称一致。
+* 在现代 Django 开发中，`urls.py` 通常只会包含项目级别的路由，而应用（App）级别的具体路由则分散在各个应用自己的 `urls.py` 文件中，通过 `include()` 函数引入。
+* `asgi.py` 和 `wsgi.py` 允许您的 Django 项目与不同的 Web 服务器环境进行交互。
+
+---
+---
+
 ## FBV 和 CBV：Django 中的视图实现方式
 
 在 Django 中，可以使用 **函数视图 (Function-Based Views, FBV)** 和 **类视图 (Class-Based Views, CBV)** 来处理 API 请求。这两种方式各有其优势和劣势，适用于不同的场景。
