@@ -13,14 +13,15 @@ from polls.urls import urlpatternsfrom django.conf.urls.i18n import urlpatterns
 `python manage.py startapp polls` 这将创建一个名为 polls 的目录，其布局如下：
 ```
 polls/
-    __init__.py
-    admin.py
-    apps.py
-    migrations/
-        __init__.py
-    models.py
-    tests.py
-    views.py
+|-- __init__.py
+|-- admin.py
+|-- apps.py
+|-- migrations/
+|   |-- __init__.py
+|-- models.py
+|-- tests.py
+|-- urls.py
+└── views.py
 ```
 
 ---
