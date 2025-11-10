@@ -4,6 +4,13 @@
 
 ---
 
+### 初始化流程
+
+* 创建项目目录 mkdir project_name
+* 项目初始化 django-admin startproject `mysite` project_name 这将在项目目录内创建一个名为 **`mysite`** 的项目
+
+---
+
 ### 核心文件和目录说明
 
 | 文件/目录 | 描述 | 官方文档链接 |
@@ -25,6 +32,10 @@
 * 在现代 Django 开发中，`urls.py` 通常只会包含项目级别的路由，而应用（App）级别的具体路由则分散在各个应用自己的 `urls.py` 文件中，通过 `include()` 函数引入。
 * `asgi.py` 和 `wsgi.py` 允许您的 Django 项目与不同的 Web 服务器环境进行交互。
 
+### 启动项目
+
+```python manage.py runserver```
+* 详见[Django runserver](https://docs.djangoproject.com/zh-hans/5.2/ref/django-admin/#django-admin-runserver)
 ---
 ---
 
